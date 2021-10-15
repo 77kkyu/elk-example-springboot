@@ -8,7 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
 
-@Log4j2
 @SpringBootTest
 class ElkExampleSpringbootApplicationTests {
 
