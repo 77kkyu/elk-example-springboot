@@ -29,19 +29,11 @@ public class BoardService {
 	public String boardTitleSearch(String keyword) {
 		log.info("boardTitleSearch Service");
 		String elasticSearchUrl = "http://localhost:9200/board/_search?q=title:*" + keyword + "*&pretty";
-		RestTemplate rt = new RestTemplate();
-
+		RestTemplate restTemplate = new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
-
-		//MultiValueMap<String, String> parames = new LinkedMultiValueMap<>();
-		//parames.add("jsonData", jsonData);
 		HttpEntity<String> request = new HttpEntity<>(headers);
-
-		//ResponseEntity response = rt.exchange("http://localhost:8081/test", HttpMethod.GET, request, String.class);
-		String response = rt.postForObject(elasticSearchUrl, request, String.class);
-		ObjectMapper objectMapper = new ObjectMapper();
-
+		String response = restTemplate.postForObject(elasticSearchUrl, request, String.class);
 		System.out.println(response);
 		return response;
 	}
