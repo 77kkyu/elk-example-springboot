@@ -8,7 +8,6 @@ import org.springframework.data.elasticsearch.annotations.Document;
 
 @Setter
 @Getter
-@ToString
 @Document(indexName = "board")
 public class Board {
 
@@ -19,4 +18,20 @@ public class Board {
 
 	private String content;
 
+	public Board(){};
+
+	public Board(String id, String title, String content) {
+		this.id = id;
+		this.title = title;
+		this.content = content;
+	}
+
+	@Override
+	public String toString() {
+		return "Board{" +
+				"id='" + id + '\'' +
+				", title='" + title + '\'' +
+				", content='" + content + '\'' +
+				'}';
+	}
 }
