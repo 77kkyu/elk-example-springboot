@@ -32,8 +32,8 @@ class ElkExampleSpringbootApplicationTests {
 	void findTest() {
 		boardEsRepository.findAll();
 		boardEsRepository.findById("1");
-		System.out.println("test 1 = " + boardEsRepository.findAll().iterator().hasNext());
-		System.out.println("test 2 = " + boardEsRepository.findById("1").get());
+		System.out.println("findAll = " + boardEsRepository.findAll().iterator().hasNext());
+		System.out.println("findById = " + boardEsRepository.findById("1").get());
 	}
 
 }
